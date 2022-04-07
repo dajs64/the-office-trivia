@@ -121,33 +121,40 @@
 
   // we want to have one question at a time, so the first question can either display on page load or after hitting start
 
-  // add click listener to next/previous
+//   // add click listener to next/previous
 document.getElementById("next").addEventListener("click, nextIndex")
+
 document.getElementById("previous").addEventListener("click, previousIndex")
-// add click listener for answers
+//  // add click listener for answers
 document.getElementById("Answer 1").addEventListener("click, nextIndex")
 document.getElementById("Answer 2").addEventListener("click, nextIndex")
 document.getElementById("Answer 3").addEventListener("click, nextIndex")
-// correct answer index's
+// // // correct answer index's
 correctAnswers = [2,0,2], 
 gameAnswers = [];
-// answer click listeners 
+// // answer click listeners 
 for (var i = 0; i < buttonArray.length; i++) {
-  buttonArray[i].addEventListener('click', self.anwerClicked, false);
-
-};
-
+buttonArray[i].addEventListener('click', self.anwerClicked, false);
+// };
 
 
-self.setupUserInterfaceWithData = function() {
-  // Add questions to buttons
-  var ques = questions[gameQuestions[gameIndex]];
-  var t = questionTitle[0].getElementsByTagName('span');
-  t[0].innerHTML = ques;
-  // Add answers to buttons
-  var ans = answers[gameQuestions[gameIndex]];
-  for (var i = 0; i < ans.length; i++) {
-    var a = ans[i];
-    buttonArray[i].textContent = a;
-  }
- };
+
+// self.setupUserInterfaceWithData = function() {
+//   // Add questions to buttons
+//   var ques = questions[gameQuestions[gameIndex]];
+//   var t = questionTitle[0].getElementsByTagName('span');
+//   t[0].innerHTML = ques;
+//   // Add answers to buttons
+//   var ans = answers[gameQuestions[gameIndex]];
+//   for (var i = 0; i < ans.length; i++) {
+//     var a = ans[i];
+//     buttonArray[i].textContent = a;
+//   }
+//  };
+
+
+document.on = ("load", function () { })
+
+
+
+constButton1 = document.getElementById(correctAnswers)
