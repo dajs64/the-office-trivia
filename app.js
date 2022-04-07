@@ -99,7 +99,18 @@
   // };
 
   // array of objects
+  let index = 0
 
+  function incrementIndex() {
+    index = index + 1
+    console.log(index)
+  }
+
+  function decrementIndex() {
+    index = index -1
+    console.log(index)
+  }
+ 
 
   const data = [
     {
@@ -118,13 +129,19 @@
       answer: '92',
     }
   ];
+  function logQuestion(idx) {
+    const question = data[idx].question
+    console.log(question)
+  }
 
+ 
   // we want to have one question at a time, so the first question can either display on page load or after hitting start
-
+// object is a variable made of key value pairs those live inside {}
 //   // add click listener to next/previous
-document.getElementById("next").addEventListener("click, nextIndex")
+document.getElementById("next").addEventListener("click", () => incrementIndex())
 
-document.getElementById("previous").addEventListener("click, previousIndex")
+
+document.getElementById("previous").addEventListener("click", () => decrementIndex())
 //  // add click listener for answers
 document.getElementById("Answer 1").addEventListener("click, nextIndex")
 document.getElementById("Answer 2").addEventListener("click, nextIndex")
@@ -135,7 +152,7 @@ gameAnswers = [];
 // // answer click listeners 
 for (var i = 0; i < buttonArray.length; i++) {
 buttonArray[i].addEventListener('click', self.anwerClicked, false);
-// };
+};
 
 
 
@@ -153,8 +170,8 @@ buttonArray[i].addEventListener('click', self.anwerClicked, false);
 //  };
 
 
-document.on = ("load", function () { })
+// document.on = ("load", function () { })
 
 
 
-constButton1 = document.getElementById(correctAnswers)
+// constButton1 = document.getElementById(correctAnswers)
