@@ -2,24 +2,22 @@ body {
   background-color: aqua;
 }
 h1 {
-  color: blue;
   font: 100;
   text-align: center;
   height: fit-content;
   border-radius: 20px;
-  border-width: 10px;
+  border-width: 5px;
   border-style: solid;
 }
 h2 {
-  color: green;
   font-size: 50px;
   text-align: center;
   margin-top: 200px;
   border-style: solid;
   padding: 10px;
-  border-width: 10px;
+  border-width: 5px;
   border-radius: 20px;
-  border-width: 10px;
+  border-width: 5px;
 }
 
 
@@ -31,14 +29,15 @@ h2 {
   height: 200px;
   border-style: ridge;
   border-inline-width: 10px;
-  border-color: blue;
+  border-color: rgb(0, 0, 7);
   border-radius: 20px;
-  border-width: 10px;
+  border-width: 5px;
 }
 
 .answer-btn {
-  color: blue;
+  color: rgb(0, 0, 1);
   font-size: 30px;
   border-radius: 20px;
-  border-width: 10px;
+  border-width: 5px;
 }
+
