@@ -4,7 +4,7 @@
 
 You play to win.
 
-Player 1 always goes first. 
+Player 1 goes first. 
 Your goal is to get to 5 correct answers before your opponent correctly answers 5 questions.
 Questions are challenging with a few freebies.
 This game is to challenge everything you thought you knew about the office. 

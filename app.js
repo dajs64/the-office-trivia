@@ -38,3 +38,114 @@
 // create a sigular button to pop up upon 5 correct answers 
 // pops up in the middle of the screen 
 // create a "play again" button that pops up 2 seconds (2000 ms) after winner window appears lnking the trivia page
+
+
+
+// Phase 1 
+// click start button 
+// 1 question will present itself
+// 3 answers will appear below
+// choose right answer to get a point 
+// earn 5 points to win
+
+// Phase 2
+  // start button
+    // console.log ("button clicked")
+    // build simple window with one button to click labeled "start" 
+    // button linked to main game page
+    // main game page loads 
+    // game begins instantly
+  // html window with start button
+    // simple styling focus on the JS 
+  // once start is clicked game begins
+  // start button linked to game page 
+
+  // question window middle of screen 
+  // H2 element linked to JS to change questions upon correct answer 
+  // new question/page loads no matter the answer 
+  // correct answer awards point to player 
+
+// answers dispayed under question window defined as div 1,2,3 elements
+// 3 potential answers to choose from
+// correct answer chosen awards point to player (link points to player)
+// incorrect answer chosen new question and set of answers populates
+
+// player with 5 correct answers wins 
+  // 20 questions total
+    // build array of questions 
+  // wrong answers not displayed
+  // right answers displayed on page or in console
+
+  // ******** //  // ******** //  // ******** //  // ******** //  // ******** // 
+  //start with an array of objects 
+  // each index of the array first key value pair (question)
+  // next 3 key value pairs (answers)
+  // event listener on answers 
+  // incriemtn to the next index in the array 
+
+
+  // const questions = [question 1 what hand does michael shoot with,question 2 how much does Angela weigh]
+  // const Question 1 = {
+  //      Question
+  //      answer1: "both",
+  //      answer2: "right",
+  //      answer3: "left",      
+  // };
+  
+  // const Question 2 = {
+  //      answer1: "92lbs",
+  //      answer2: "102lbs",
+  //      answer3: "82lbs",      
+  // };
+
+  // array of objects
+
+
+  const data = [
+    {
+      question: 'How much does Angela weight?',
+      options: ['102', '82', '92'],
+      answer: '82',
+    },
+    {
+      question: 'How much does Michael weight?',
+      options: ['102', '82', '92'],
+      answer: '102',
+    },
+    {
+      question: 'How much does Devin weight?',
+      options: ['102', '82', '92'],
+      answer: '92',
+    }
+  ];
+
+  // we want to have one question at a time, so the first question can either display on page load or after hitting start
+
+  // add click listener to next/previous
+document.getElementById("next").addEventListener("click, nextIndex")
+document.getElementById("previous").addEventListener("click, previousIndex")
+// add click listener for answers
+document.getElementById("Answer 1").addEventListener("click, nextIndex")
+document.getElementById("Answer 2").addEventListener("click, nextIndex")
+document.getElementById("Answer 3").addEventListener("click, nextIndex")
+// correct answer index's
+correctAnswers = [2,0,2], 
+gameAnswers = [];
+// answer click listeners 
+for (var i = 0; i < buttonArray.length; i++) {
+  buttonArray[i].addEventListener('click', self.anwerClicked, false);
+
+};
+
+self.setupUserInterfaceWithData = function() {
+  // Add questions to buttons
+  var ques = questions[gameQuestions[gameIndex]];
+  var t = questionTitle[0].getElementsByTagName('span');
+  t[0].innerHTML = ques;
+  // Add answers to buttons
+  var ans = answers[gameQuestions[gameIndex]];
+  for (var i = 0; i < ans.length; i++) {
+    var a = ans[i];
+    buttonArray[i].textContent = a;
+  }
+ };
