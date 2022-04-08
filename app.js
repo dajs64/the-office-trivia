@@ -131,7 +131,8 @@ function incrementIndex() {
 
 function decrementIndex() {
   index = index - 1;
-  logQuestion();
+  const returnedQuestion = returnQuestion();
+  document.getElementById("question").textContent = returnedQuestion;
 }
 
 // we want to have one question at a time, so the first question can either display on page load or after hitting start
@@ -172,3 +173,12 @@ for (var i = 0; i < buttonArray.length; i++) {
 // document.on = ("load", function () { })
 
 // constButton1 = document.getElementById(correctAnswers)
+
+
+
+
+
+
+
+// NEXT STEP IF ELSE STATEMENTS SO THAT THE PAGE WONT GO PAST QUESTION # 3 AND WILL STOP AT QUESTION # 1 //
+// IF ELSE STATEMTNS WILL DO THIS LOOK THEM UP FRIDAY (TOMORROW) //
