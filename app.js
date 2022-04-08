@@ -114,12 +114,19 @@ const data = [
 ];
 
 let index = 0;
-let option1 = data[index].options[0]
-let option2 = data[index].options[1]
-let option3 = data[index].options[2]
+let option1  = null
+let option2 = null
+let option3 = null
+
+function updateOptions() {
+  let option1 = data[index].options[0]
+  let option2 = data[index].options[1]
+  let option3 = data[index].options[2]
+}
+
+updateOptions();
 
 
-populateScreen(0);
 
 function populateScreen(index) {
   const currentSelection = data[index];
@@ -131,6 +138,8 @@ function populateScreen(index) {
   document.getElementById("option3-btn").textContent =
     currentSelection.options[2];
 }
+
+populateScreen(0);
 
 
 function returnQuestion() {
@@ -168,6 +177,7 @@ function handleClickAnswer(value,answer) {
     }
     incrementIndex()
     populateScreen(index)
+    updateOptions()
 }
 
 function decrementIndex() {
