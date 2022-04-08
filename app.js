@@ -83,23 +83,17 @@
 // const questions = [question 1 what hand does michael shoot with,question 2 how much does Angela weigh]
 // const Question 1 = {
 //      Question
-//      answer1: "both",
-//      answer2: "right",
-//      answer3: "left",
+//      option1: "both",
+//      option2: "right",
+//      option3: "left",
 // };
 
 // const Question 2 = {
-//      answer1: "92lbs",
-//      answer2: "102lbs",
-//      answer3: "82lbs",
+//      option1: "92lbs",
+//      option2: "102lbs",
+//      option3: "82lbs",
 // };
 // global variable
-let answer1 = null
-let answer2 = null
-let answer3 = null
-let index = 0;
-
-// array of objects
 
 const data = [
   {
@@ -109,7 +103,7 @@ const data = [
   },
   {
     question: "How much does Michael weight?",
-    options: ["102", "92", "82"],
+    options: ["82", "92", "102"],
     answer: "102",
   },
   {
@@ -119,57 +113,72 @@ const data = [
   },
 ];
 
-// page load (first function invocation)
-populateScreen(0);
+let index = 0;
+let option1 = data[index].options[0]
+let option2 = data[index].options[1]
+let option3 = data[index].options[2]
 
-// create a function here that populates all of your current values on the screen
-// - question
-// - options
+
+populateScreen(0);
 
 function populateScreen(index) {
   const currentSelection = data[index];
   document.getElementById("question").textContent = currentSelection.question;
-  document.getElementById("answer1-btn").textContent =
+  document.getElementById("option1-btn").textContent =
     currentSelection.options[0];
-  document.getElementById("answer2-btn").textContent =
+  document.getElementById("option2-btn").textContent =
     currentSelection.options[1];
-  document.getElementById("answer3-btn").textContent =
+  document.getElementById("option3-btn").textContent =
     currentSelection.options[2];
 }
 
-// function populateScreen(index) {
-// const currentSelection = date[index];
-// cument.getElementById("question").textContent = currentSelection.question;
+
 function returnQuestion() {
   const question = data[index].question;
-  answer1 = data[index].options[0];
-  answer2 = data[index].options[1];
-  answer3 = data[index].options[2];
+  option1 = data[index].options[0];
+  option2 = data[index].options[1];
+  option3 = data[index].options[2];
   return question;
 }
 
-
 function incrementIndex() {
-  if (index + 1 < data.length) {
+  if (index < data.length -1) {
     index = index + 1;
-    const returnedQuestion = returnQuestion();
-    document.getElementById("question").innerText = returnedQuestion;
-    document.getElementById("answer1-btn").innerText = answer1;
-    document.getElementById("answer2-btn").innerText = answer2;
-    document.getElementById("answer3-btn").innerText = answer3;
-    console.log("clicked");
-  } else if (index === data.length - 1) {
-    window.alert("You won?");
-  }
+   } 
+   //else if (index === data.length - 1) {
+    //window.alert("You won?");
+  //}
+}
+
+// function updateHtmlElements() {
+//   const returnedQuestion = returnQuestion();
+//     document.getElementById("question").innerText = returnedQuestion;
+//     document.getElementById("option1-btn").innerText = option1;
+//     document.getElementById("option2-btn").innerText = option2;
+//     document.getElementById("option3-btn").innerText = option3;
+// }
+
+function handleClickAnswer(value,answer) {
+    console.log(value, answer)
+    if (value === answer) {
+      console.log("true")
+    }
+    else {
+      console.log("false")
+    }
+    incrementIndex()
+    populateScreen(index)
 }
 
 function decrementIndex() {
-  if (index - 1 > data.length) {
-    index = index - 1;
-    const returnedQuestion = returnQuestion();
-    document.getElementById("question").innerText = returnedQuestion;
+  if (index > 0) {
+    index = index - 1
   }
 }
+
+
+
+// add an valuate answer function 
 
 // function incrementIndex () {
 //   index = index + 1;
@@ -191,26 +200,17 @@ document
   .addEventListener("click", () => decrementIndex());
 
 document
-  .getElementById("answer1-btn")
-  .addEventListener("click", () => incrementIndex());
+  .getElementById("option1-btn")
+  .addEventListener("click", () => handleClickAnswer(option1, data[index].answer));
 
 document
-  .getElementById("answer2-btn")
-  .addEventListener("click", () => incrementIndex());
+  .getElementById("option2-btn")
+  .addEventListener("click", () => handleClickAnswer(option2, data[index].answer));
 
 document
-  .getElementById("answer3-btn")
-  .addEventListener("click", () => incrementIndex());
-//  // add click listener for answers
-// document.getElementById("Answer 1").addEventListener("click, nextIndex");
-// document.getElementById("Answer 2").addEventListener("click, nextIndex");
-// document.getElementById("Answer 3").addEventListener("click, nextIndex");
-// // // // correct answer index's
-// (correctAnswers = [2, 0, 2]), (gameAnswers = []);
-// // // answer click listeners
-// for (var i = 0; i < buttonArray.length; i++) {
-//   buttonArray[i].addEventListener("click", self.anwerClicked, false);
-// }
+  .getElementById("option3-btn")
+  .addEventListener("click", () => handleClickAnswer(option3, data[index].answer));
+// access the info within the clappers with the event object // if whats clicked matches then move on 
 
 // // self.setupUserInterfaceWithData = function() {
 // //   // Add questions to buttons
