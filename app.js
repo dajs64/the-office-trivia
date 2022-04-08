@@ -93,9 +93,11 @@
 //      answer2: "102lbs",
 //      answer3: "82lbs",
 // };
-// global variable 
-
-let index = 0
+// global variable
+let answer1 = null
+let answer2 = null
+let answer3 = null
+let index = 0;
 
 // array of objects
 
@@ -107,16 +109,15 @@ const data = [
   },
   {
     question: "How much does Michael weight?",
-    options: ["102", "82", "92"],
+    options: ["102", "92", "82"],
     answer: "102",
   },
   {
     question: "How much does Devin weight?",
-    options: ["102", "82", "92"],
+    options: ["92", "82", "102"],
     answer: "92",
   },
 ];
-
 
 // page load (first function invocation)
 populateScreen(0);
@@ -139,31 +140,36 @@ function populateScreen(index) {
 // function populateScreen(index) {
 // const currentSelection = date[index];
 // cument.getElementById("question").textContent = currentSelection.question;
-
-
-
 function returnQuestion() {
   const question = data[index].question;
+  answer1 = data[index].options[0];
+  answer2 = data[index].options[1];
+  answer3 = data[index].options[2];
   return question;
 }
 
-// change increment index to display next question 
-// add conditional to compare index with the length of array 
+
 function incrementIndex() {
-  index = index + 1;
-  const returnedQuestion = returnQuestion();
-  document.getElementById("question").innerText = returnedQuestion;
-  console.log("clicked")
-
+  if (index + 1 < data.length) {
+    index = index + 1;
+    const returnedQuestion = returnQuestion();
+    document.getElementById("question").innerText = returnedQuestion;
+    document.getElementById("answer1-btn").innerText = answer1;
+    document.getElementById("answer2-btn").innerText = answer2;
+    document.getElementById("answer3-btn").innerText = answer3;
+    console.log("clicked");
+  } else if (index === data.length - 1) {
+    window.alert("You won?");
+  }
 }
 
-// if index is less than 0 return to the function 
 function decrementIndex() {
-  index = index - 1;
-  const returnedQuestion = returnQuestion();
-  document.getElementById("question").innerText = returnedQuestion;
+  if (index - 1 > data.length) {
+    index = index - 1;
+    const returnedQuestion = returnQuestion();
+    document.getElementById("question").innerText = returnedQuestion;
+  }
 }
-
 
 // function incrementIndex () {
 //   index = index + 1;
@@ -184,15 +190,15 @@ document
   .getElementById("previous")
   .addEventListener("click", () => decrementIndex());
 
-  document
+document
   .getElementById("answer1-btn")
   .addEventListener("click", () => incrementIndex());
 
-  document
+document
   .getElementById("answer2-btn")
   .addEventListener("click", () => incrementIndex());
 
-  document
+document
   .getElementById("answer3-btn")
   .addEventListener("click", () => incrementIndex());
 //  // add click listener for answers
