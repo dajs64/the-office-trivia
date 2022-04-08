@@ -93,6 +93,9 @@
 //      answer2: "102lbs",
 //      answer3: "82lbs",
 // };
+// global variable 
+
+let index = 0
 
 // array of objects
 
@@ -114,6 +117,7 @@ const data = [
   },
 ];
 
+
 // page load (first function invocation)
 populateScreen(0);
 
@@ -132,25 +136,42 @@ function populateScreen(index) {
     currentSelection.options[2];
 }
 
+// function populateScreen(index) {
+// const currentSelection = date[index];
+// cument.getElementById("question").textContent = currentSelection.question;
+
+
+
 function returnQuestion() {
   const question = data[index].question;
   return question;
 }
 
+// change increment index to display next question 
+// add conditional to compare index with the length of array 
 function incrementIndex() {
   index = index + 1;
   const returnedQuestion = returnQuestion();
-  document.getElementById("question").textContent = returnedQuestion;
+  document.getElementById("question").innerText = returnedQuestion;
   console.log("clicked")
 
 }
 
+// if index is less than 0 return to the function 
 function decrementIndex() {
   index = index - 1;
   const returnedQuestion = returnQuestion();
-  document.getElementById("question").textContent = returnedQuestion;
+  document.getElementById("question").innerText = returnedQuestion;
 }
 
+
+// function incrementIndex () {
+//   index = index + 1;
+//   const returnedOption = returnOption();
+//   document.getElementById("answer-btn1").textContent = returnedOption
+// }
+
+// DONT USE TEXT CONTENT***
 // we want to have one question at a time, so the first question can either display on page load or after hitting start
 // object is a variable made of key value pairs those live inside {}
 //   // add click listener to next/previous
@@ -162,16 +183,28 @@ document
 document
   .getElementById("previous")
   .addEventListener("click", () => decrementIndex());
+
+  document
+  .getElementById("answer1-btn")
+  .addEventListener("click", () => incrementIndex());
+
+  document
+  .getElementById("answer2-btn")
+  .addEventListener("click", () => incrementIndex());
+
+  document
+  .getElementById("answer3-btn")
+  .addEventListener("click", () => incrementIndex());
 //  // add click listener for answers
-document.getElementById("Answer 1").addEventListener("click, nextIndex");
-document.getElementById("Answer 2").addEventListener("click, nextIndex");
-document.getElementById("Answer 3").addEventListener("click, nextIndex");
-// // // correct answer index's
-(correctAnswers = [2, 0, 2]), (gameAnswers = []);
-// // answer click listeners
-for (var i = 0; i < buttonArray.length; i++) {
-  buttonArray[i].addEventListener("click", self.anwerClicked, false);
-}
+// document.getElementById("Answer 1").addEventListener("click, nextIndex");
+// document.getElementById("Answer 2").addEventListener("click, nextIndex");
+// document.getElementById("Answer 3").addEventListener("click, nextIndex");
+// // // // correct answer index's
+// (correctAnswers = [2, 0, 2]), (gameAnswers = []);
+// // // answer click listeners
+// for (var i = 0; i < buttonArray.length; i++) {
+//   buttonArray[i].addEventListener("click", self.anwerClicked, false);
+// }
 
 // // self.setupUserInterfaceWithData = function() {
 // //   // Add questions to buttons
