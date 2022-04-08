@@ -114,9 +114,23 @@ const data = [
   },
 ];
 
-let index = 0;
 // page load (first function invocation)
-document.getElementById("question").textContent = data[index].question;
+populateScreen(0);
+
+// create a function here that populates all of your current values on the screen
+// - question
+// - options
+
+function populateScreen(index) {
+  const currentSelection = data[index];
+  document.getElementById("question").textContent = currentSelection.question;
+  document.getElementById("answer1-btn").textContent =
+    currentSelection.options[0];
+  document.getElementById("answer2-btn").textContent =
+    currentSelection.options[1];
+  document.getElementById("answer3-btn").textContent =
+    currentSelection.options[2];
+}
 
 function returnQuestion() {
   const question = data[index].question;
@@ -127,6 +141,8 @@ function incrementIndex() {
   index = index + 1;
   const returnedQuestion = returnQuestion();
   document.getElementById("question").textContent = returnedQuestion;
+  console.log("clicked")
+
 }
 
 function decrementIndex() {
@@ -157,28 +173,22 @@ for (var i = 0; i < buttonArray.length; i++) {
   buttonArray[i].addEventListener("click", self.anwerClicked, false);
 }
 
-// self.setupUserInterfaceWithData = function() {
-//   // Add questions to buttons
-//   var ques = questions[gameQuestions[gameIndex]];
-//   var t = questionTitle[0].getElementsByTagName('span');
-//   t[0].innerHTML = ques;
-//   // Add answers to buttons
-//   var ans = answers[gameQuestions[gameIndex]];
-//   for (var i = 0; i < ans.length; i++) {
-//     var a = ans[i];
-//     buttonArray[i].textContent = a;
-//   }
-//  };
+// // self.setupUserInterfaceWithData = function() {
+// //   // Add questions to buttons
+// //   var ques = questions[gameQuestions[gameIndex]];
+// //   var t = questionTitle[0].getElementsByTagName('span');
+// //   t[0].innerHTML = ques;
+// //   // Add answers to buttons
+// //   var ans = answers[gameQuestions[gameIndex]];
+// //   for (var i = 0; i < ans.length; i++) {
+// //     var a = ans[i];
+// //     buttonArray[i].textContent = a;
+// //   }
+// //  };
 
-// document.on = ("load", function () { })
+// // document.on = ("load", function () { })
 
-// constButton1 = document.getElementById(correctAnswers)
+// // constButton1 = document.getElementById(correctAnswers)
 
-
-
-
-
-
-
-// NEXT STEP IF ELSE STATEMENTS SO THAT THE PAGE WONT GO PAST QUESTION # 3 AND WILL STOP AT QUESTION # 1 //
-// IF ELSE STATEMTNS WILL DO THIS LOOK THEM UP FRIDAY (TOMORROW) //
+// // NEXT STEP IF ELSE STATEMENTS SO THAT THE PAGE WONT GO PAST QUESTION # 3 AND WILL STOP AT QUESTION # 1 //
+// // IF ELSE STATEMTNS WILL DO THIS LOOK THEM UP FRIDAY (TOMORROW) //
