@@ -119,9 +119,9 @@ let option2 = null
 let option3 = null
 
 function updateOptions() {
-  let option1 = data[index].options[0]
-  let option2 = data[index].options[1]
-  let option3 = data[index].options[2]
+  option1 = data[index].options[0]
+  option2 = data[index].options[1]
+  option3 = data[index].options[2]
 }
 
 updateOptions();
