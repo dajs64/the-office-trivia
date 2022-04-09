@@ -220,8 +220,8 @@ document
 document
   .getElementById("option3-btn")
   .addEventListener("click", () => handleClickAnswer(option3, data[index].answer));
-// access the info within the clappers with the event object // if whats clicked matches then move on 
 
+  
 // // self.setupUserInterfaceWithData = function() {
 // //   // Add questions to buttons
 // //   var ques = questions[gameQuestions[gameIndex]];
