@@ -3,8 +3,8 @@
 const data = [
   {
     question: "How much does Angela weight?",
-    options: ["102", "82", "92"],
-    answer: "82",
+    options: ["102", "82", "92"], 
+    answer: "82" 
   },
   {
     question: "How much does Michael weight?",
@@ -115,6 +115,9 @@ function updateOptions() {
   option3 = data[index].options[2]
 }
 
+// calculate score 
+document.write('<p>Congradulations! You scored ' + score + ' points!</p>);
+
 updateOptions();
 
 
@@ -152,6 +155,7 @@ function incrementIndex() {
 }
 
 
+
 function handleClickAnswer(value,answer) {
     console.log(value, answer)
     if (value === answer) {
@@ -165,11 +169,13 @@ function handleClickAnswer(value,answer) {
     updateOptions()
 }
 
-function decrementIndex() {
-  if (index > 0) {
-    index = index - 1
-  }
+// adding score 
+var score = 0;
+if (data[2] + 1) {
+  document.getElementById("score").innerHTML = score;
 }
+
+
 
 // popup window function 
   function basicPopup(url) {
@@ -216,7 +222,7 @@ document
   .getElementById("reset")
   .addEventListener("click", () => populateScreen(0))
 
-  
+
 
 
 
