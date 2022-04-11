@@ -171,6 +171,12 @@ function decrementIndex() {
   }
 }
 
+// popup window function 
+  function basicPopup(url) {
+    popupWindow =
+    window.open(url,'popUpWindow','height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directectories=no status=yes');
+  }
+
 
 
 // add an valuate answer function 
@@ -205,6 +211,16 @@ document
 document
   .getElementById("option3-btn")
   .addEventListener("click", () => handleClickAnswer(option3, data[index].answer));
+
+document
+  .getElementById("reset")
+  .addEventListener("click", () => populateScreen(0))
+
+  
+
+
+
+
 
   
  // add reset button 

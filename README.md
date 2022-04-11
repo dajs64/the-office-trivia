@@ -10,3 +10,9 @@ Questions are challenging with a few freebies.
 This game is to challenge everything you thought you knew about the office. 
 Please play with caution and refrain from googling an answer.
 Click the right answer to recieve 1 point!
+
+
+Wire frame
+file:///Users/devinsylvester/Desktop/Screen%20Shot%202022-04-10%20at%205.25.01%20PM.png
+
+
