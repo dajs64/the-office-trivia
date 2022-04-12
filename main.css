@@ -1,17 +1,18 @@
 body {
-  background-color: rgb(194, 85, 85);
+  background-color: rgb(117, 188, 108);
 }
 
 #score {
   font-size: 100px;
-  border: 5px;
-  border-style: solid;
-  border-color: rgb(0, 0, 0);
+  border: 10px;
+  border-style: ridge;
+  border-color: rgb(255, 255, 255);
+  background-color: rgb(164, 178, 191);
   padding: 10px;
 }
 
 h1 {
-  font: 100;
+  font-size: 50;
   text-align: center;
   height: fit-content;
   border-radius: 20px;
@@ -37,23 +38,25 @@ h2 {
   height: 200px;
   border-style: ridge;
   border-inline-width: 10px;
-  border-color: rgb(0, 0, 7);
-  border-radius: 20px;
-  border-width: 5px;
+  border-color: rgb(123, 123, 127);
+  border-radius: 40px;
+  border-width: 20px;
 }
 
 .option-btn {
   color: rgb(0, 0, 1);
-  font-size: 30px;
+  font-size: 50px;
   border-radius: 20px;
-  border-width: 5px;
+  border-width: 10px;
+  border-style: ridge;
 }
 
 #reset {
   font-size: 50px;
-  background-color: rgb(180, 73, 73);
-  border: 5px;
+  background-color: rgb(163, 168, 200);
+  border: 10px;
   border-style: ridge;
-  padding: 5px;
+  padding: 15px;
   margin: 10px;
 }
+
