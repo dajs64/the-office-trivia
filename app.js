@@ -2,6 +2,7 @@
 var score = 0;
 const playerScore = document.getElementById("score");
 const data = [
+// List of questions (key value pairs)  
   {
     question: "How much does Angela weight?",
     options: ["102", "82", "92"],
@@ -33,19 +34,19 @@ const data = [
     answer: "rabies",
   },
   {
-    question: "Who does Jim shoop hoops with?",
+    question: "Who does Jim shoot hoops with?",
     options: ["Michael Jordan", "Julius Erving", "Magic"],
     answer: "Julius Erving",
   },
   {
-    question: "What sport leads to the severe injury of DeAngelo Vickers?",
+    question: "What sport leads to the severe injury of Deangelo Vickers?",
     options: ["Ice skating", "Golfing", "Basketball"],
     answer: "Basketball",
   },
   {
-    question: "Charles Minor worked in what industry before paper?",
-    options: ["steel", "gas", "rock"],
-    answer: "steel",
+    question: "Charles Miner worked at this company before Dunder Mifflin?",
+    options: ["Saticoy Steel", "Exon Mobile", "Home Depot"],
+    answer: "Saticoy Steel",
   },
   {
     question: "Chair model distracts michael from what?",
@@ -53,7 +54,7 @@ const data = [
     answer: "work",
   },
   {
-    question: "Kevin ruined Jim and Pam's honey moon by?",
+    question: "Kevin ruined Jim and Pam's honeymoon by?",
     options: ["forgetting to take them to the airport", "locking their credit cards", "losing their luggage"],
     answer: "locking their credit cards",
   },
@@ -63,14 +64,14 @@ const data = [
     answer: "lacrosse stick",
   },
   {
-    question: "Phylis had a nickname in high school?",
+    question: "Phyllis had a nickname in high school?",
     options: ["night owl", "easy rider", "burp queen"],
     answer: "easy rider",
   },
   {
     question: "Dwight Jr's actual name?",
-    options: ["clark", "plop", "daniel"],
-    answer: "clark",
+    options: ["Clark", "plop", "Daniel"],
+    answer: "Clark",
   },
   {
     question: "Pams mural gets covered in?",
@@ -83,19 +84,19 @@ const data = [
     answer: "fake ids",
   },
   {
-    question: "Who eventually buys the office park?",
+    question: "Who eventually buys the office building?",
     options: ["Dwight", "Bob Vance", "Oscar"],
     answer: "Dwight",
   },
   {
     question: "Dwights sisters name?",
-    options: ["doesnt have a sister", "mildred", "fannie"],
+    options: ["doesn't have a sister", "Mildred", "fannie"],
     answer: "fannie",
   },
   {
-    question: "dwights cousins brothers name?",
-    options: ["jeb", "alfred", "zeke"],
-    answer: "zeke",
+    question: "What is Mose's brothers name?",
+    options: ["Jeb", "Alfred", "Zeke"],
+    answer: "Zeke",
   },
   {
     question: "If you don't know your rules you will be eaten in what?",
@@ -108,18 +109,15 @@ let index = 0;
 let option1 = null;
 let option2 = null;
 let option3 = null;
-
+// Populate options portion
 function updateOptions() {
   option1 = data[index].options[0];
   option2 = data[index].options[1];
   option3 = data[index].options[2];
 }
 
-// calculate score
-// document.write('<p>Congradulations! You scored ' + score + ' points!</p>);
-
 updateOptions();
-
+// Give potential answer buttons functionality
 function populateScreen() {
   const currentSelection = data[index];
   document.getElementById("question").textContent = currentSelection.question;
@@ -132,7 +130,7 @@ function populateScreen() {
 }
 
 populateScreen(index);
-
+// Display the next question 
 function returnQuestion() {
   const question = data[index].question;
   option1 = data[index].options[0];
@@ -140,7 +138,7 @@ function returnQuestion() {
   option3 = data[index].options[2];
   return question;
 }
-
+// Move on to the next question no matter the button pressed
 function incrementIndex() {
   if (index < data.length - 1) {
     index = index + 1;
@@ -148,7 +146,8 @@ function incrementIndex() {
     window.alert("You won?");
     }
 }
-
+// Increase score when the right answer is selected
+// In console log reveal "false" when wrong answer selected
 function handleClickAnswer(value, answer) {
   console.log(value, answer);
   if (value === answer) {
@@ -160,32 +159,16 @@ function handleClickAnswer(value, answer) {
   }
   incrementIndex();
 
-  // function checkProgress(value, index) {
-  //   if (value === 15) {
-  //     document.getElementsByTagName("div");
-  //   }
-  // }
-  // checkProgress();
   populateScreen(index);
   updateOptions();
 }
-
+// Reset game function
 function resetGame() {
   score = 0;
   playerScore.innerHTML = score;
   index = 0;
   populateScreen(index);
 }
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-
-// Get the modal
-// add an valuate answer function
-
-// 
 
 // DONT USE TEXT CONTENT***
 // we want to have one question at a time, so the first question can either display on page load or after hitting start
