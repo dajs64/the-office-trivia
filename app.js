@@ -120,7 +120,7 @@ function updateOptions() {
 
 updateOptions();
 
-function populateScreen(index) {
+function populateScreen() {
   const currentSelection = data[index];
   document.getElementById("question").textContent = currentSelection.question;
   document.getElementById("option1-btn").textContent =
@@ -131,7 +131,7 @@ function populateScreen(index) {
     currentSelection.options[2];
 }
 
-populateScreen(0);
+populateScreen(index);
 
 function returnQuestion() {
   const question = data[index].question;
@@ -142,11 +142,11 @@ function returnQuestion() {
 }
 
 function incrementIndex() {
-  if (index < data.length - 1) {
+  if (index !== 0 && index < data.length - 1) {
     index = index + 1;
-  } else if (index === data.length - 1) {
+    } else {
     window.alert("You won?");
-  }
+    }
 }
 
 function handleClickAnswer(value, answer) {
@@ -170,6 +170,11 @@ function handleClickAnswer(value, answer) {
   updateOptions();
 }
 
+function resetGame() {
+  score = 0;
+  playerScore.innerHTML = score;
+  populateScreen(index);
+}
 // window.onclick = function(event) {
 //   if (event.target == modal) {
 //     modal.style.display = "none";
@@ -179,11 +184,7 @@ function handleClickAnswer(value, answer) {
 // Get the modal
 // add an valuate answer function
 
-function incrementIndex () {
-  index = index + 1;
-  // const returnedOption = returnOption();
-  // document.getElementById("answer-btn1").textContent = returnedOption
-}
+// 
 
 // DONT USE TEXT CONTENT***
 // we want to have one question at a time, so the first question can either display on page load or after hitting start
@@ -216,12 +217,7 @@ document
     handleClickAnswer(option3, data[index].answer)
   );
 
-document.getElementById("reset").addEventListener("click", () => {
-  score = 0;
-  playerScore.innerHTML = score;
-  populateScreen(0);
-});
-
+document.getElementById("reset").addEventListener("click", () => resetGame())
 
 // Get the modal 
 // var modal = document.getElementById("myModal")
