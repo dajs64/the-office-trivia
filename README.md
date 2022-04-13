@@ -69,3 +69,12 @@ Score window: top-right corner of the page will diplay score
 Question window: located in the middle of the page will display the current question
 Win: If you answer 15/20 questions correctly a "win" window will appear with a congradulatory phrase and rights to all bragging.
 
+Hard part...
+function resetGame() {
+  score = 0;
+  playerScore.innerHTML = score;
+  index = 0;
+  populateScreen(index);
+}
+
+I tried to loop this through a bunch of different elements and it just wouldn't work until it was broken down to bare bones. At one point I had like 15 lines in JS for this one reset button. 
