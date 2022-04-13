@@ -142,7 +142,7 @@ function returnQuestion() {
 }
 
 function incrementIndex() {
-  if (index !== 0 && index < data.length - 1) {
+  if (index < data.length - 1) {
     index = index + 1;
     } else {
     window.alert("You won?");
@@ -173,6 +173,7 @@ function handleClickAnswer(value, answer) {
 function resetGame() {
   score = 0;
   playerScore.innerHTML = score;
+  index = 0;
   populateScreen(index);
 }
 // window.onclick = function(event) {
