@@ -175,13 +175,7 @@ function resetGame() {
 // object is a variable made of key value pairs those live inside {}
 //   // add click listener to next/previous
 
-document
-  .getElementById("next")
-  .addEventListener("click", () => incrementIndex());
 
-document
-  .getElementById("previous")
-  .addEventListener("click", () => decrementIndex());
 
 document
   .getElementById("option1-btn")
