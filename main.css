@@ -15,7 +15,7 @@
   font-size: larger;
   border-radius: 100px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: row wrap;
 }
 
 .score {
